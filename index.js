@@ -22,12 +22,13 @@ const { PubSub } = require('@google-cloud/pubsub');
  *
  * @param {Object} req Cloud Function request context.
  */
-exports.publishMessage = req => {
+exports.publishMessage = async req => {
   const pubSubClient = new PubSub();
 
   const topic = pubSubClient.topic(process.env.PUBSUB_TOPIC_NAME);
 
   const message = req.body;
   const messageId = await topic.publish(message);
-  console.log(`Message ${message.resource.id}-${message.event} published with ID ${messageId}.`);
+  console.log(
+    `Message ${message.resource.id}-${message.event} published with ID ${messageId}.`);
 };
