@@ -1,0 +1,38 @@
+{
+  "name": "taxeus-payment-msg-publisher",
+  "version": "0.1.0",
+  "description": "Google Cloud Function to publish messages to a Pub/Sub Topic",
+  "main": "./index.js",
+  "scripts": {
+    "coverage": "nyc npm test",
+    "fix": "eslint --fix ./*.js",
+    "lint": "eslint ./*.js",
+    "test": "mocha --reporter mocha-multi-reporters --reporter-options configFile=./mocha-multi-reporters.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taxeus/taxeus-payment-msg-publisher.git"
+  },
+  "author": "Ricardo Mendes <ricardolsmendes@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/taxeus/taxeus-payment-msg-publisher/issues"
+  },
+  "homepage": "https://github.com/taxeus/taxeus-payment-msg-publisher#readme",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.9.4",
+    "@google-cloud/pubsub": "^2.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "mocha": "^8.3.0",
+    "mocha-junit-reporter": "^2.0.0",
+    "mocha-multi-reporters": "^1.5.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.4"
+  }
+}
